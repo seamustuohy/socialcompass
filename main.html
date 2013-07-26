@@ -1,0 +1,74 @@
+<html>
+  
+  <head>
+	<title>Social Compass : Finding and contacting your source from their social media</title>
+
+<script type="text/javascript">
+  window.onload = function() {
+      var photo = document.getElementById('photoButton');
+      var name = document.getElementById('nameButton');  
+      var username = document.getElementById('usernameButton');
+      var email = document.getElementById('emailButton');
+      
+      photo.onclick = function(){
+          var textfield = document.getElementById('textfield').value
+          newwin = window.open(textfield,'photoOpen');
+          if (window.focus) {newwin.focus()}
+              return false;
+  }
+        name.onclick = function(){
+          var textfield = document.getElementById('textfield').value
+          textfieldUnderscore = textfield.replace(/ /, "_")
+          newwin01 = window.open("http://www.peekyou.com/"+textfieldUnderscore,'peekyouName');
+          textfieldPlus = textfield.replace(/ /, "+")
+          newwin02 = window.open("http://www.spokeo.com/search?q="+textfieldPlus+"&global=true",'spokeoName');
+          newwin03 = window.open("http://www.zabasearch.com/people/"+textfieldPlus,'zabasearchName');
+          if (window.focus) {newwin.focus()}
+              return false;
+  }
+
+        username.onclick = function(){
+          var textfield = document.getElementById('textfield').value
+          newwin01 = window.open("http://www.peekyou.com/username="+textfield,'peekyouUsername');
+          newwin02 = window.open("http://knowem.com/checkusernames.php?u="+textfield,'knowemUsername');
+          newwin03 = window.open("http://www.spokeo.com/username-search/search?u="+textfield,'spokeoUsername');
+  
+          if (window.focus) {newwin.focus()}
+              return false;
+  }
+
+        email.onclick = function(){
+          var textfield = document.getElementById('textfield').value
+          newwin01 = window.open("http://www.peekyou.com/email/"+textfield,'peekEmail');
+          newwin02 = window.open("http://www.spokeo.com/email-search/search?e="+textfield, 'spokeEmail');
+          if (window.focus) {newwin.focus()}
+              return false;
+  }
+
+	    }
+
+</script>
+  </head>
+  <body>
+
+	<FORM>
+	  <input type="text"
+			 id="textfield"
+			 >
+	  <br/>
+	  <INPUT TYPE="button"
+			 id="nameButton"
+			 VALUE="Search For A Name">
+	  <INPUT TYPE="button"
+			 id="photoButton"
+			 VALUE="Search For A photo">
+	  <INPUT TYPE="button"
+			 id="usernameButton"
+			 VALUE="Search For A user name">
+	  <INPUT TYPE="button"
+			 id="emailButton"
+			 VALUE="Search For A email">
+	</FORM>
+	
+  </body>
+</html>
